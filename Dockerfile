@@ -1,5 +1,9 @@
-FROM nginx:alpine
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/templates/default.conf.template
+FROM nginx:stable-alpine
+
+RUN rm -f /etc/nginx/conf.d/default.conf
+
 COPY . /usr/share/nginx/html
-CMD ["/bin/sh", "-c", "envsubst '$PORT' < /etc/nginx/templates/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
+
+COPY nginx.conf /etc/nginx/nginx.conf.template
+
+CMD ["/bin/sh", "-c", "envsubst '${PORT}' < /etc/nginx/nginx.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
