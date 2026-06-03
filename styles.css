@@ -48,6 +48,22 @@ ul { list-style: none; }
   padding: 0 2rem;
 }
 
+section { text-align: center; }
+
+/* Keep contact, footer, and long body text left-aligned */
+.contact-grid,
+.contact-info,
+.contact-form,
+.form-group,
+.form-row,
+footer,
+.footer-inner,
+.footer-bottom { text-align: left; }
+
+/* Contact info left-aligned */
+.contact-info p,
+.contact-info h3 { text-align: left; }
+
 
 /* ── Buttons ─────────────────────────────────────── */
 
@@ -105,20 +121,25 @@ ul { list-style: none; }
 
 .label {
   display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.13em;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--sage);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  background-color: rgba(94, 103, 93, 0.09);
+  padding: 0.3rem 0.875rem;
+  border-radius: 50px;
+  border: 1px solid rgba(94, 103, 93, 0.2);
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.25rem);
   font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
   margin-bottom: 1.25rem;
+  text-wrap: balance;
 }
 
 .section-lead {
@@ -126,6 +147,9 @@ ul { list-style: none; }
   color: var(--muted);
   line-height: 1.75;
   max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  text-wrap: pretty;
 }
 
 
@@ -286,6 +310,7 @@ nav.scrolled {
   justify-content: center;
   padding: 9rem 0 6rem;
   text-align: center;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(94,103,93,0.1) 0%, transparent 70%);
 }
 
 .hero-content {
@@ -302,6 +327,7 @@ nav.scrolled {
   line-height: 1.05;
   letter-spacing: -0.03em;
   margin-bottom: 1.75rem;
+  text-wrap: balance;
 }
 
 .hero-title em {
@@ -314,7 +340,10 @@ nav.scrolled {
   color: var(--muted);
   line-height: 1.75;
   max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2.75rem;
+  text-wrap: pretty;
 }
 
 .hero-cta {
@@ -348,6 +377,7 @@ nav.scrolled {
 .audience-card {
   background-color: var(--white);
   border: 1px solid var(--border);
+  border-top: 3px solid var(--sage);
   border-radius: var(--radius);
   padding: 2.5rem;
   display: flex;
@@ -357,6 +387,7 @@ nav.scrolled {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 24px rgba(17, 23, 28, 0.07);
 }
 
 .audience-card::after {
@@ -404,6 +435,7 @@ nav.scrolled {
   font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 .audience-card p {
@@ -411,6 +443,7 @@ nav.scrolled {
   color: var(--muted);
   line-height: 1.65;
   flex: 1;
+  text-wrap: pretty;
 }
 
 .card-link {
@@ -441,37 +474,51 @@ nav.scrolled {
 
 .how-section {
   padding: 7rem 0;
-  background-color: var(--sage-light);
+  background-color: var(--text);
+  text-align: center;
 }
 
-.how-section .section-lead { max-width: 460px; }
+.how-section .label {
+  color: var(--sage-mid);
+  background-color: rgba(138, 148, 137, 0.15);
+  border-color: rgba(138, 148, 137, 0.25);
+}
+
+.how-section .section-title { color: var(--bg); }
+.how-section .section-lead { max-width: 460px; color: rgba(243,242,239,0.5); }
 
 .how-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
-  margin-top: 4rem;
+  gap: 3rem;
+  margin-top: 4.5rem;
 }
 
 .how-step { display: flex; flex-direction: column; gap: 1.125rem; }
 
 .how-number {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--muted);
+  font-size: 5.5rem;
+  font-weight: 700;
   line-height: 1;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(243, 242, 239, 0.13);
+  margin-bottom: 0.5rem;
 }
 
 .how-step h3 {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.3;
+  text-wrap: balance;
+  color: var(--bg);
 }
 
 .how-step p {
   font-size: 0.9rem;
-  color: var(--muted);
+  color: rgba(243, 242, 239, 0.5);
   line-height: 1.7;
+  text-wrap: pretty;
 }
 
 
@@ -516,7 +563,11 @@ nav.scrolled {
   background-color: var(--text);
 }
 
-.cta-section .label { color: var(--sage-mid); }
+.cta-section .label {
+  color: var(--sage-mid);
+  background-color: rgba(138, 148, 137, 0.15);
+  border-color: rgba(138, 148, 137, 0.25);
+}
 
 .cta-section .section-title {
   color: var(--bg);
@@ -639,30 +690,46 @@ footer {
 /* ── Inner page hero ─────────────────────────────── */
 
 .page-hero {
-  padding: 10rem 0 6rem;
+  padding: 10rem 0 7rem;
   min-height: 68vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--text);
 }
 
-.page-hero-content { max-width: 680px; }
+.page-hero-content { max-width: 680px; margin: 0 auto; }
 
-.page-hero .hero-title { font-size: clamp(2.5rem, 5vw, 4rem); }
+.page-hero .label {
+  color: var(--sage-mid);
+  background-color: rgba(138, 148, 137, 0.15);
+  border-color: rgba(138, 148, 137, 0.25);
+}
 
-.page-hero .hero-sub { margin-bottom: 2.5rem; }
+.page-hero .hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--bg);
+}
+
+.page-hero .hero-sub {
+  color: rgba(243, 242, 239, 0.6);
+  margin-bottom: 2.5rem;
+}
 
 
 /* ── Problem section ─────────────────────────────── */
 
-.problem-section { padding: 6rem 0; }
+.problem-section { padding: 6rem 0; text-align: center; }
 
 .problem-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 3rem;
 }
 
+.problem-text { max-width: 680px; margin: 0 auto; text-align: center; }
 .problem-text .section-title { font-size: clamp(1.7rem, 3vw, 2.35rem); }
 
 .problem-items {
@@ -670,6 +737,9 @@ footer {
   flex-direction: column;
   gap: 2rem;
   margin-top: 2.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }
 
 .problem-item {
@@ -697,14 +767,11 @@ footer {
   font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.7;
+  text-wrap: pretty;
 }
 
 .problem-visual {
-  background-color: var(--sage-light);
-  border-radius: var(--radius);
-  aspect-ratio: 4/5;
-  position: relative;
-  overflow: hidden;
+  display: none;
 }
 
 .problem-visual-inner {
@@ -754,9 +821,14 @@ footer {
   padding: 7rem 0;
   background-color: var(--text);
   color: var(--bg);
+  text-align: center;
 }
 
-.benefits-section .label { color: var(--sage-mid); }
+.benefits-section .label {
+  color: var(--sage-mid);
+  background-color: rgba(138, 148, 137, 0.15);
+  border-color: rgba(138, 148, 137, 0.25);
+}
 .benefits-section .section-title { color: var(--bg); }
 .benefits-section .section-lead { color: rgba(243, 242, 239, 0.5); }
 
@@ -769,15 +841,19 @@ footer {
 
 .benefit-card {
   border: 1px solid rgba(243, 242, 239, 0.09);
+  border-left: 3px solid var(--sage);
   border-radius: var(--radius);
   padding: 2.25rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, background 0.25s;
 }
 
-.benefit-card:hover { border-color: rgba(94, 103, 93, 0.35); }
+.benefit-card:hover {
+  border-color: rgba(94, 103, 93, 0.5);
+  background-color: rgba(94, 103, 93, 0.04);
+}
 
 .benefit-icon {
   width: 44px;
@@ -832,25 +908,30 @@ footer {
 
 /* ── About page ──────────────────────────────────── */
 
-.story-section { padding: 6rem 0; }
+.story-section { padding: 6rem 0; text-align: center; }
 
 .story-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 3rem;
 }
 
 .story-text {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  align-items: center;
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .story-text p {
   font-size: 1rem;
   color: var(--muted);
   line-height: 1.85;
+  text-wrap: pretty;
 }
 
 .story-text p.lead {
@@ -860,14 +941,7 @@ footer {
 }
 
 .story-visual {
-  background-color: var(--sage-light);
-  border-radius: var(--radius);
-  aspect-ratio: 3/4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+  display: none;
 }
 
 .story-visual-tree {
@@ -907,10 +981,12 @@ footer {
 .value-card {
   background-color: var(--white);
   border-radius: var(--radius);
+  border-top: 3px solid var(--sage);
   padding: 2.25rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  box-shadow: 0 4px 20px rgba(17, 23, 28, 0.06);
 }
 
 .value-number {
@@ -1160,6 +1236,7 @@ footer {
 
 .industries-section {
   padding: 6rem 0;
+  text-align: center;
 }
 
 .industries-grid {
@@ -1187,6 +1264,7 @@ footer {
 .venues-examples {
   padding: 6rem 0;
   background-color: var(--sage-light);
+  text-align: center;
 }
 
 .venues-grid-2 {
@@ -1283,6 +1361,30 @@ footer {
 }
 
 
+/* ── Dark section utility ────────────────────────── */
+
+.section-dark {
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+.section-dark .label {
+  color: var(--sage-mid);
+  background-color: rgba(138, 148, 137, 0.15);
+  border-color: rgba(138, 148, 137, 0.25);
+}
+
+.section-dark .section-title { color: var(--bg); }
+
+.section-dark .section-lead { color: rgba(243, 242, 239, 0.55); }
+
+.section-dark .problem-item-dot { background-color: var(--sage-mid); }
+
+.section-dark .problem-item-text p { color: rgba(243, 242, 239, 0.65); }
+
+.section-dark p { color: rgba(243, 242, 239, 0.65); }
+
+
 /* ── Scroll reveal ───────────────────────────────── */
 
 .reveal {
@@ -1351,4 +1453,55 @@ footer {
   .team-grid { grid-template-columns: 1fr; }
   .contact-form { padding: 2rem 1.5rem; }
   .nav-inner { padding: 0 1.25rem; }
+}
+
+
+/* ── Yew tree scroll animation ───────────────────── */
+
+.yew-tree-wrap {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: clamp(180px, 20vw, 290px);
+  height: 100vh;
+  pointer-events: none;
+  z-index: 2;
+  overflow: visible;
+  opacity: 0.6;
+}
+
+.yew-tree-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.yew-branch {
+  fill: none;
+  stroke: var(--sage-mid);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dashoffset 0.28s ease-out;
+  will-change: stroke-dashoffset;
+}
+
+/* Leaves spring into view when their branch is revealed */
+.yew-leaf-el {
+  fill: var(--sage);
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  transform: scale(0);
+  transition:
+    transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity   0.4s ease;
+}
+
+.yew-leaf-el.sprouted {
+  transform: scale(1);
+  opacity: 1;
+}
+
+@media (max-width: 960px) {
+  .yew-tree-wrap { display: none; }
 }
