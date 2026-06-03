@@ -1,16 +1,8 @@
 Dockerfile
 .dockerignore
-nginx.conf
 railway.json
-nixpacks.toml
-Procfile
-server.py
-requirements.txt
-.python-version
 pyproject.toml
 README.md
 CLAUDE.md
 *.py
-*.toml
-*.txt
 .git
