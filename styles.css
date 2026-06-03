@@ -172,6 +172,27 @@ nav.scrolled {
   box-shadow: 0 1px 0 var(--border);
 }
 
+/* Nav over dark hero pages */
+.page-hero ~ nav,
+body:has(.page-hero) nav:not(.scrolled) {
+  color: var(--bg);
+}
+
+body:has(.page-hero) nav:not(.scrolled) .nav-logo-text,
+body:has(.page-hero) nav:not(.scrolled) .nav-links a {
+  color: var(--bg);
+}
+
+body:has(.page-hero) nav:not(.scrolled) .nav-toggle span {
+  background-color: var(--bg);
+}
+
+body:has(.page-hero) nav:not(.scrolled) .footer-logo-fallback {
+  background-color: rgba(243,242,239,0.15);
+  border-color: rgba(243,242,239,0.4);
+  color: var(--bg);
+}
+
 .nav-inner {
   display: flex;
   align-items: center;
