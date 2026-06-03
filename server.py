@@ -16,6 +16,7 @@ class CleanURLHandler(SimpleHTTPRequestHandler):
         pass  # silence request logs
 
 if __name__ == '__main__':
-    server = HTTPServer(('localhost', 8080), CleanURLHandler)
-    print('Serving at http://localhost:8080')
+    port = int(os.environ.get('PORT', 8080))
+    server = HTTPServer(('0.0.0.0', port), CleanURLHandler)
+    print(f'Serving at http://0.0.0.0:{port}')
     server.serve_forever()
