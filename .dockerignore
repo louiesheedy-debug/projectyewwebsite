@@ -1,8 +1,0 @@
-Dockerfile
-.dockerignore
-railway.json
-pyproject.toml
-README.md
-CLAUDE.md
-*.py
-.git
