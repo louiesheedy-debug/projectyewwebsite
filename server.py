@@ -8,6 +8,14 @@ class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=BASE_DIR, **kwargs)
 
+    def do_GET(self):
+        path = self.path.split('?')[0].split('#')[0]
+        if '.' not in os.path.basename(path) and not path.endswith('/'):
+            candidate = os.path.join(BASE_DIR, path.lstrip('/') + '.html')
+            if os.path.exists(candidate):
+                self.path = path + '.html'
+        super().do_GET()
+
     def log_message(self, format, *args):
         pass
 
